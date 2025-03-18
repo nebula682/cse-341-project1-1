@@ -1,8 +1,11 @@
-const express = require('express')
-const app = expres();
 
-const  port = Process.env.PORT || 3000;
+const express = require('express');
+const app = express(); // Fixed typo
 
-app.use('/', require('./routers'));
+const port = process.env.PORT || 3000; // Fixed case sensitivity
 
-app.listen(port, () => {console.log(`Running on port ${port}`)});
+app.use('/', require('./routes')); // Verify the correct router path
+
+app.listen(port, () => {
+    console.log(`Running on port ${port}`);
+});
