@@ -1,11 +1,20 @@
-
 const express = require('express');
-const app = express(); // Fixed typo
 
-const port = process.env.PORT || 3000; // Fixed case sensitivity
+const mongodb = require('./data/database');
+const app = express();
 
-app.use('/', require('./routes')); // Verify the correct router path
+const port = process.env.PORT || 3000;
 
-app.listen(port, () => {
-    console.log(`Running on port ${port}`);
+app.use('/', require('./routes'));
+
+
+mongodb.initDb((err) => {
+    if (err) {
+        console.log('There is an error',err);
+    }
+     else {
+        app.listen(port, () =>
+             { console.log(`Database is listening and node Running on port ${port}`);
+        });
+    }
 });
