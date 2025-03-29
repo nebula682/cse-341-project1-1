@@ -22,10 +22,11 @@ const createContact = async(req, res) =>{
     //#swagger.tags=['Contacts']
     
     const Contact ={
-        name: req.body.name,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email:req.body.email,
-        phone:req.body.phone,
-        address:req.body.address
+        favoriteColor:req.body.favoriteColor,
+        birthday:req.body.birthday
 
 
     };
@@ -45,10 +46,11 @@ const updateContact = async(req, res) =>{
     //#swagger.tags=['Contacts']
     const contactId = new ObjectId(req.params.id);
     const Contact ={
-        name: req.body.name,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
         email:req.body.email,
-        phone:req.body.phone,
-        address:req.body.address
+        favoriteColor:req.body.favoriteColor,
+        birthday:req.body.birthday
         
 
 
