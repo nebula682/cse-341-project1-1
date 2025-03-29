@@ -1,4 +1,4 @@
-{
+ {
   "name": "cse-341-project1",
   "version": "1.0.0",
   "description": "My First Project",
@@ -19,6 +19,8 @@
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "mongodb": "^6.15.0"
+    "mongodb": "^6.15.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   }
 }
